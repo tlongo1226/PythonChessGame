@@ -1,5 +1,6 @@
 from pieces.Piece import Piece
 
+
 class Knight(Piece):
     """Knight is a subclass of Piece that contains knight movement logic."""
 
@@ -18,10 +19,14 @@ class Knight(Piece):
         row, col = pos
 
         offsets = [
-            (-2, -1), (-2, 1),
-            (-1, -2), (-1, 2),
-            (1, -2),  (1, 2),
-            (2, -1),  (2, 1)
+            (-2, -1),
+            (-2, 1),
+            (-1, -2),
+            (-1, 2),
+            (1, -2),
+            (1, 2),
+            (2, -1),
+            (2, 1),
         ]
 
         for dRow, dCol in offsets:

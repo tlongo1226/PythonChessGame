@@ -17,9 +17,9 @@ class Bishop(Piece):
 
         directions = [
             (-1, -1),  # up-left diagonal
-            (-1, 1),   # up-right diagonal
-            (1, -1),   # down-left diagonal
-            (1, 1)     # down-right diagonal
+            (-1, 1),  # up-right diagonal
+            (1, -1),  # down-left diagonal
+            (1, 1),  # down-right diagonal
         ]
 
         for direction in directions:

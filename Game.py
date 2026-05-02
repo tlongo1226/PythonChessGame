@@ -1,10 +1,10 @@
-
 from Board import Board
 import random
 
 
 class Game:
-    """ Game contains the rules and state of the chess board. """
+    """Game contains the rules and state of the chess board."""
+
     def __init__(self):
         self.board = Board()
         self.selectedSquare = None
@@ -12,17 +12,15 @@ class Game:
         self.turnCounter = 1
         self.pendingPromotion = None
         print("First turn:", self.currentTurn)
-        
-
 
     def handleClicks(self, clickedPos):
-        """ handleClicks determines what should be done based on where the user clicks. It uses multiple helper functions within the UI.py class to determine where in the window the user clicked.  """
-        
+        """handleClicks determines what should be done based on where the user clicks. It uses multiple helper functions within the UI.py class to determine where in the window the user clicked."""
+
         if self.pendingPromotion:
             self.board.promotePiece(self.pendingPromotion, clickedPos)
             self.pendingPromotion = None
             return
-        
+
         piece = self.board.getPiece(clickedPos)
         # --- Nothing selected yet ---
         if self.selectedSquare is None:
@@ -48,7 +46,7 @@ class Game:
                 self.pendingPromotion = (pos, color)
             print("Moved:", self.selectedSquare, "->", clickedPos)
             self.currentTurn = "black" if self.currentTurn == "white" else "white"
-            self.turnCounter +=1
+            self.turnCounter += 1
             self.selectedSquare = None
             return
 
@@ -62,12 +60,11 @@ class Game:
         print("Invalid move:", self.selectedSquare, "->", clickedPos)
         self.selectedSquare = None
 
-
     def getValidMoves(self):
-        """ getValidMoves determines the available moves based on the passed piece """
+        """getValidMoves determines the available moves based on the passed piece"""
         if self.selectedSquare is None:
             return []
-        
+
         piece = self.board.getPiece(self.selectedSquare)
         if not piece:
             return []

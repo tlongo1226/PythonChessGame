@@ -4,11 +4,11 @@ import colors
 from Game import Game
 from ui import UI
 
-#-------------------- Member Vars ----------------------------
+# -------------------- Member Vars ----------------------------
 
-#-------------------- Class functions ----------------------------
+# -------------------- Class functions ----------------------------
 
-#-------------------- INIT ----------------------------
+# -------------------- INIT ----------------------------
 pygame.init()
 
 WIDTH, HEIGHT = 800, 800
@@ -27,7 +27,7 @@ while running:
     # -------- INPUT --------
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False     
+            running = False
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouseX, mouseY = event.pos
@@ -54,5 +54,3 @@ while running:
 
 pygame.quit()
 sys.exit()
-
-

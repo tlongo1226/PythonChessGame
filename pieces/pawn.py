@@ -1,11 +1,12 @@
 from pieces.Piece import Piece
 
+
 class Pawn(Piece):
 
     def __init__(self, color):
         super().__init__(color, "Pa")
-        self.firstTurn = True # used to track if it is the first move of the pawn
-    
+        self.firstTurn = True  # used to track if it is the first move of the pawn
+
     def getMoves(self, board, pos):
         """Return all legal pawn moves from the current board position.
 
@@ -22,10 +23,7 @@ class Pawn(Piece):
 
         oneStep = (row + direction, col)
         twoStep = (row + 2 * direction, col)
-        diagonals = [
-            (row + direction, col - 1),
-            (row + direction, col + 1)
-        ]
+        diagonals = [(row + direction, col - 1), (row + direction, col + 1)]
 
         # One-square forward move must be empty.
         if board.isOnBoard(oneStep) and board.isEmpty(oneStep):
@@ -42,7 +40,7 @@ class Pawn(Piece):
                 moves.append(diag)
 
         return moves
-    
+
     def isPromotion(self, pos):
         """Return True when the pawn reaches the promotion rank."""
         row, col = pos
@@ -51,8 +49,7 @@ class Pawn(Piece):
         elif self.color == "black" and row == 7:
             return True
         return False
-    
+
     def setFirstTurn(self, isFirstTurn):
         """Update the pawn's first-turn flag after its initial move."""
         self.firstTurn = isFirstTurn
-    

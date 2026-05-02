@@ -14,8 +14,14 @@ class Queen(Piece):
         squares along ranks, files, or diagonals until blocked by another piece.
         """
         directions = [
-            (-1, 0), (1, 0), (0, -1), (0, 1),
-            (-1, -1), (-1, 1), (1, -1), (1, 1)
+            (-1, 0),
+            (1, 0),
+            (0, -1),
+            (0, 1),
+            (-1, -1),
+            (-1, 1),
+            (1, -1),
+            (1, 1),
         ]
 
         moves = []

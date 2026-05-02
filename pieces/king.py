@@ -17,10 +17,10 @@ class King(Piece):
         moves = []
         row, col = pos
         directions = [
-            (row + 1, col),      # down
-            (row - 1, col),      # up
-            (row, col - 1),      # left
-            (row, col + 1),      # right
+            (row + 1, col),  # down
+            (row - 1, col),  # up
+            (row, col - 1),  # left
+            (row, col + 1),  # right
             (row + 1, col + 1),  # down-right
             (row + 1, col - 1),  # down-left
             (row - 1, col + 1),  # up-right
@@ -28,7 +28,9 @@ class King(Piece):
         ]
 
         for direction in directions:
-            if (board.isOnBoard(direction) and board.isEmpty(direction)) or board.isEnemy(direction, self.color):
+            if (
+                board.isOnBoard(direction) and board.isEmpty(direction)
+            ) or board.isEnemy(direction, self.color):
                 moves.append(direction)
 
         return moves

@@ -16,18 +16,9 @@ class Rook(Piece):
         """
         moves = []
 
-        directions = [
-            (-1, 0),  # up
-            (1, 0),   # down
-            (0, -1),  # left
-            (0, 1)    # right
-        ]
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]  # up  # down  # left  # right
 
         for direction in directions:
             moves.extend(self._walkDirection(board, pos, direction))
 
         return moves
-
-
-
-    
