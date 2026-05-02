@@ -2,20 +2,24 @@ from pieces.Piece import Piece
 
 
 class Bishop(Piece):
-    """Bishop is a subclass of the Piece class that holds the bishop movement logic"""
+    """Bishop is a subclass of Piece that holds bishop movement logic."""
 
     def __init__(self, color):
         super().__init__(color, "Bi")
 
     def getMoves(self, board, pos):
-        """TODO"""
+        """Return all legal bishop moves from the current board position.
+
+        The bishop moves diagonally in any direction until it hits the edge
+        of the board, a friendly piece, or an enemy piece that it can capture.
+        """
         moves = []
 
         directions = [
-            (-1, -1), # up left
-            (-1, 1), # up right
-            (1, -1), # down left
-            (1, 1) # down right
+            (-1, -1),  # up-left diagonal
+            (-1, 1),   # up-right diagonal
+            (1, -1),   # down-left diagonal
+            (1, 1)     # down-right diagonal
         ]
 
         for direction in directions:
